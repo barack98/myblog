@@ -1,0 +1,32 @@
+<!doctype html>
+<title>Myblog</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+	<div>
+		<div class="navbar1">	
+			<a style="" href="{{ url_for('home') }}">Home</a>
+			<a href="{{ url_for('about') }}">About Me</a>
+			<a href="{{ url_for('contact') }}">Contact Me</a>
+			<div class="navbar1-right">
+				{% if not session.logged_in %}
+					<a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-log-in"></span> Log In</a>
+				{% else %}
+					<a href="{{ url_for('logout') }}"><span class="glyphicon glyphicon-log-out"></span> Log Out</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		
+		
+		{% for message in get_flashed_messages() %}
+			<div class="flash">{{ message }}</div><br><br>
+		{% endfor %}
+		{% block body %}{% endblock %}
+
+	</div>

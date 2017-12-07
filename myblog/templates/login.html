@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div class="container">
+
+	<div class="container1" id="login1">
+	<div class="content" >
+		<h2>Login</h2>
+		{% if error %}
+			<p class="error"><strong>Error: </strong> {{ error }} </p>
+		{% endif %}
+
+		<form action="{{ url_for('login') }}" method="post">
+				<div class="imgcontainer">
+					<img src="../images/avatar.png">
+				</div>
+				<div class="form">
+					<label> Username: </label>
+					<input type="text" class="form-control" name="username" placeholder="Enter Username">
+
+					<label>Password:</label>  
+					<input type="password" class="form-control" name="password" placeholder="Enter Password">
+				
+					<button type="submit" >Log In</button>
+					<input type="checkbox" checked="checked" >Remember Me
+					
+				</div>
+				<div class="form">
+					<button onclick="document.getElementById('login1').style.display='none'" type="button" class="cancelbtn">Cancel</button>
+					<span class="psw">Forget <a href="">Password</a></span>
+				</div>
+				
+		</form>
+	</div>
+	</div>
+
+</div>
+{% endblock %}
