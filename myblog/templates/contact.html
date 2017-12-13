@@ -3,7 +3,35 @@
 {% block body %}
 
 <div class="container">
-	<h1>Here is my contact page</h1>
+	<div class="contact-form-content">
+		<form id="form-contact">
+			
+				<label>First Name</label>
+				<input type="text" id="fname" placeholder="Enter First Name">
+				
+				<label>Last Name</label>
+				<input type="text" id="fname" placeholder="Enter Last Name">
+			
+				<label>Country</label>
+					<select id="country">
+						<option>Australia</option>
+						<option>Canada</option>
+						<option>USA</option>
+						<option>Kenya</option>
+						<option>Brazil</option>
+						<option>South Africa</option>
+						<option>Ghana</option>
+						<option>Angola</option>
+						<option>Egypt</option>
+						<option>Portugal</option>
+						<option>Spain</option>
+					</select>
+				
+			<label>Subject</label>
+			<textarea id="subject" placeholder="Write Your Message" style="height: 200px;"></textarea>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
 </div>
 
 {% endblock %}

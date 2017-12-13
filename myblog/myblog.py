@@ -61,9 +61,9 @@ def close_db(error):
 
 
 
-@app.route('/home')
-def home():
-	return render_template('home.html')
+@app.route('/')
+def index():
+	return render_template('index.html')
 
 @app.route('/about')
 def about():
@@ -73,7 +73,7 @@ def about():
 def contact():
 	return render_template('contact.html')
 
-@app.route('/')
+@app.route('/home')
 def show_entries():
 	db = get_db()
 	cur = db.execute('select title, text from entries order by id desc')

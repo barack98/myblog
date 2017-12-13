@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container">
+	<h1>Here is my home page</h1>
+	<button class="post" onclick="document.getElementById('post').style.display='block'" style="width: auto; background-color: purple; color: white;">Post</button>
+
+	<div id="post" style="display: none;">
+		{% if session.logged_in %}
+    <form action="{{ url_for('add_entry') }}" method=post class=add-entry id="form-show-entries">
+
+      <label>Title: </label>
+      <input class="text" type="text"  name=title>
+      
+      <label>Text: </label>
+      <textarea class="form-control" name=text style="height: 200px;"></textarea>
+      
+      <input type="submit" value="Share">
+     
+    </form>
+  {% endif %}
+	</div>
+
+	<ul class=entries>
+  {% for entry in entries %}
+    <li><h2>{{ entry.title }}</h2>{{ entry.text|safe }}</li>
+  {% else %}
+    <li><em>Unbelievable.  No entries here so far</em></li>
+  {% endfor %}
+  </ul>
+
+</div>
+
+{% endblock %}

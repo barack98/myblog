@@ -3,9 +3,27 @@ body {
 	background: #eee;
 }
 
+/*----styles for index page-----*/
+
+ button .post {
+	background-color: purple;
+	padding: 14px 20px;
+	width: auto;
+	margin:8px 0;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+button .post:hover {
+	opacity: .8;
+}
+
+/*----Endof styles for index page-----*/
+
 
 .container {
-	padding-top: 30px;
+	padding-top: 5px;
 }
 
 .navbar1 {
@@ -148,19 +166,7 @@ span.psw {
 	background: white;
 }
 
-.entries {
-	list-style: none;
-	margin:0;
-	padding-top: 30px;
-}
 
-.entries li {
-	margin:0.8em 1.2em;
-}
-
-.entries li h2 {
-	margin-left: -1em;
-}
 
 
 
@@ -184,6 +190,96 @@ span.psw {
 	background: #f0d6d6;
 	padding: 0.5em;
 }
+
+
+
+/*------for Contact page-----*/
+
+#form-show-entries input[type="text"],  textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+}
+
+#form-show-entries input[type="submit"] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+#form-show-entries input[type="submit"]:hover {
+	background-color: #45a049;
+}
+
+/*------endfor show_entries page-----*/
+
+.content-show{
+	width: 75%;
+	float: left;
+}
+
+.entries {
+	list-style: none;
+	margin:0;
+	padding-top: 5px;
+}
+
+.entries li {
+	margin:0.8em 1.2em;
+}
+
+.entries li h2 {
+	margin-left: -1em;
+}
+
+.left-bar {
+	width: 25%;
+}
+
+
+/*------for Contact page-----*/
+
+#form-contact input[type="text"], select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+}
+
+#form-contact input[type="submit"] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+#form-contact input[type="submit"]:hover {
+	background-color: #45a049;
+}
+
+.contact-form-content {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+}
+
+/*------endfor Contact page-----*/
 
 
 

@@ -2,28 +2,41 @@
 {% block body %}
 
 <div class="container">
-  <div class="content-show">
-  {% if session.logged_in %}
-    <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
-      <div class="form1">
-        <label>Title: </label>
-        	<input class="text" type="text"  name=title>
-      
-      	<label>Text: </label>
-        <textarea class="form-control" name=text ></textarea>
-      </div>
-       <button type="submit" class="btn btn-default" style="margin-bottom: 30px; width: auto; ">Share</button>
-     
-    </form>
-  {% endif %}
+	<div class="row">
+	  <div class="content-show">
 
-  <ul class=entries>
-  {% for entry in entries %}
-    <li><h2>{{ entry.title }}</h2>{{ entry.text|safe }}</li>
-  {% else %}
-    <li><em>Unbelievable.  No entries here so far</em></li>
-  {% endfor %}
-  </ul>
-</div>
+	  	<dir>
+	  		<button class="post" onclick="document.getElementById('post').style.display='block'" style="width: auto; background-color: purple; color: white;">Post</button>
+
+			<div id="post" style="display: none;">
+				{% if session.logged_in %}
+				    <form action="{{ url_for('add_entry') }}" method=post class=add-entry id="form-show-entries">
+
+				      <label>Title: </label>
+				      <input class="text" type="text"  name=title>
+				      
+				      <label>Text: </label>
+				      <textarea class="form-control" name=text style="height: 200px;"></textarea>
+				      
+				      <input type="submit" value="Share">
+				     
+				    </form>
+				 {% endif %}
+			</div>
+	  	</dir>
+
+	  	<div>
+		    <ul class=entries>
+		    {% for entry in entries %}
+		      <li><h2>{{ entry.title }}</h2>{{ entry.text|safe }}</li>
+		    {% else %}
+		      <li><em>Unbelievable.  No entries here so far</em></li>
+		    {% endfor %}
+		    </ul>
+		</div>
+
+	  </div>
+	  <div class="left-bar"></div>
+  	</div>
 </div>
 {% endblock %}
